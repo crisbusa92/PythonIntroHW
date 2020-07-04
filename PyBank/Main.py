@@ -4,12 +4,22 @@ import csv
 csvpath = os.path.join('Resources','pybank.csv')
 
 with open(csvpath,'r') as datafile:
-    #count number of rows/months starting at 0 and skipping the header
+    #Set Comma as delimiter
+    datafile = csv.reader(datafile, delimiter=',')
+    #Set Variables to start
     monthnum = 0
+    pl = 0
+    #Skip header row
     next(datafile, None)
+    #Loop opps to get results
     for row in datafile:
         monthnum = monthnum + 1
+        pl= pl + int(row[1])
+
     
-#print result to check    
+#print results to check    
 print (monthnum)
+print (pl)
+
+
 
