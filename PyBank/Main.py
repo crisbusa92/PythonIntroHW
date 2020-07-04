@@ -11,5 +11,5 @@ with open(csvpath,'r') as datafile:
         monthnum = monthnum + 1
     
 #print result to check    
-print (monthnum
+print (monthnum)
 
