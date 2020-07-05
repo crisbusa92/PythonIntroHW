@@ -74,7 +74,7 @@ Analysis = (
     
 
 #Set Path for Output TXT Flile
-txtpath = os.path.join('pybank.txt')
+txtpath = os.path.join('Analysis','pybank.txt')
 
 #Write txt file
 txt= open(txtpath, 'w')
