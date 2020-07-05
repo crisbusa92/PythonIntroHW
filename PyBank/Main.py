@@ -60,3 +60,22 @@ print(
     f'Greatest increase in profits: {greatim} ({greati}) \n'
     f'Greatest decrease in profits: {greatdm} ({greatd})'
     )
+
+Analysis = (
+    'Financial Analysis\n'
+    '----------------------\n'
+    'Total Months ' +str(monthnum)+ '\n'
+    'Total: $' + str(pl)+ '\n'
+    'Greatest increase in profits: ' + str(greatim)+' '+str(greati)+ '\n'
+    'Greatest decrease in profits: ' + str(greatdm)+' '+str(greatd)+ '\n'
+)
+
+
+    
+
+#Set Path for Output TXT Flile
+txtpath = os.path.join('pybank.txt')
+
+#Write txt file
+txt= open(txtpath, 'w')
+txt.write(Analysis)
