@@ -44,12 +44,19 @@ greatd = min(pnls)
 #Find month for GreatestIncrease and GreatestDecrease        
 greatim = month[pnls.index(greati)]
 greatdm = month[pnls.index(greatd)]
+#Print Checkup For Testing
+#print(greati)
+#print(greatd)
+#print(greatim)
+#print(greatdm)
+
+
 #Print Results
 print(
     f'Financial Analysis\n'
-    '----------------------\n'  
-    'Total Months {monthnum}\n' 
-    'Total: ${pl}\n'
-    'Greatest increase in profits: {greatim} ({greati}) \n'
-    'Greatest decrease in profits: {greatdm} ({greatd})'
+    f'----------------------\n'  
+    f'Total Months {monthnum}\n' 
+    f'Total: ${pl}\n'
+    f'Greatest increase in profits: {greatim} ({greati}) \n'
+    f'Greatest decrease in profits: {greatdm} ({greatd})'
     )
