@@ -2,6 +2,9 @@ import os
 import csv
 # Set path for data file
 csvpath = os.path.join('Resources','pybank.csv')
+#define formula for average P&L
+def average(x):
+    return sum(x)/len(x)
 
 with open(csvpath,'r') as datafile:
     #Set Comma as delimiter
@@ -19,12 +22,13 @@ with open(csvpath,'r') as datafile:
         #Find total P&L for all periods
         pl= pl + int(row[1])
         #Greate new list to average
-        pnls.append(row)
+        pnls.append(int(row[1]))
 
-    
+
 #print results to check    
 print (monthnum)
 print (pl)
+print (average(pnls))
 
 
 
