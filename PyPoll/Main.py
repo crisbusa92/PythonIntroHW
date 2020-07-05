@@ -13,6 +13,12 @@ with open(csvpath,'r') as datafile:
     #Define Variables
     voters = 0
     candidate = []
+    khan = 0
+    correy = 0
+    li = 0
+    otooley = 0
+    canvot = {candidate[0]:khan,candidate[1]:correy,candidate[2]:li,candidate[3]:otooley}
+
 
     for row in datafile:
         #Total voters
@@ -20,7 +26,15 @@ with open(csvpath,'r') as datafile:
         #List of candidates
         if row[2] not in candidate:
             candidate.append(row[2])
-            
+        #Votes per Cadidate
+        if row[2] == candidate [0]:
+            khan = khan + 1
+        elif row[2] == candidate [1]:
+            correy = correy + 1
+        elif row[2] == candidate [2]:
+
+
+
 
 
 
