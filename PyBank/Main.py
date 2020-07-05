@@ -5,7 +5,7 @@ csvpath = os.path.join('Resources','pybank.csv')
 #define formula for average P&L
 def average(x):
     return sum(x)/len(x)
-
+#Open File to read and analyze
 with open(csvpath,'r') as datafile:
     #Set Comma as delimiter
     datafile = csv.reader(datafile, delimiter=',')
