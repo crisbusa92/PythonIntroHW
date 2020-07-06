@@ -13,12 +13,11 @@ with open(csvpath,'r') as datafile:
     #Define Variables
     voters = 0
     candidate = []
-    khan = 0
-    correy = 0
-    li = 0
-    otooley = 0
-    canvot = {candidate[0]:khan,candidate[1]:correy,candidate[2]:li,candidate[3]:otooley}
-
+    khanv = 0
+    correyv = 0
+    liv = 0
+    otooleyv = 0
+    
 
     for row in datafile:
         #Total voters
@@ -28,19 +27,29 @@ with open(csvpath,'r') as datafile:
             candidate.append(row[2])
         #Votes per Cadidate
         if row[2] == candidate [0]:
-            khan = khan + 1
+            khanv = khanv + 1
         elif row[2] == candidate [1]:
-            correy = correy + 1
+            correyv = correyv + 1
         elif row[2] == candidate [2]:
-
-
-
-
-
-
-
+            liv = liv + 1
+        elif row[2] == candidate [3]:
+            otooleyv = otooleyv + 1
+khanp = khanv/voters
+correyp = correyv/voters
+lip = liv/voters
+otooleyp = otooleyv/voters
+#New lists for Votes and Percentages
+khan = [khanv,khanp]
+correy = [correyv, correyp]
+li = [liv,lip]
+otooley = [otooleyv,otooleyp]
+#New Dictionary for Cadidate : [Votes,percentage of total]
+canvot = {candidate[0]:khan,candidate[1]:correy,candidate[2]:li,candidate[3]:otooley}
+#determine winner
+winner = max(canvot, key=canvot.get)
+#Print results for testing
 print(voters)
-print(candidate)
-
-
-
+print(len(candidate))
+print(canvot)
+print(winner)
+print(canvot.get(winner))
