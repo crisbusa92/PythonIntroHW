@@ -34,10 +34,10 @@ with open(csvpath,'r') as datafile:
             liv = liv + 1
         elif row[2] == candidate [3]:
             otooleyv = otooleyv + 1
-khanp = khanv/voters
-correyp = correyv/voters
-lip = liv/voters
-otooleyp = otooleyv/voters
+khanp = "{:.2%}".format(khanv/voters)
+correyp = "{:.2%}".format(correyv/voters)
+lip = "{:.2%}".format(liv/voters)
+otooleyp = "{:.2%}".format(otooleyv/voters)
 #New lists for Votes and Percentages
 khan = [khanv,khanp]
 correy = [correyv, correyp]
@@ -48,8 +48,45 @@ canvot = {candidate[0]:khan,candidate[1]:correy,candidate[2]:li,candidate[3]:oto
 #determine winner
 winner = max(canvot, key=canvot.get)
 #Print results for testing
-print(voters)
-print(len(candidate))
-print(canvot)
-print(winner)
-print(canvot.get(winner))
+#print(voters)
+#print(len(candidate))
+#print(canvot)
+#print(winner)
+#print(canvot)
+
+#Print Results to txt
+print(
+    f'Election Results \n'
+    f'---------------- \n'
+    f'Total Votes {voters} \n'
+    f'---------------- \n'
+    f'Khan: {khanp} ({khanv})\n'
+    f'Correy: {correyp} ({correyv}) \n'
+    f'Li: {lip} ({liv}) \n'
+    f"O'Tooley {otooleyp} ({otooleyv}) \n"
+    f'---------------- \n'
+    f'Winner: {winner} \n'
+    f'---------------- \n'
+)
+
+poll = (
+    'Election Results \n'
+    '---------------- \n'
+    'Total Votes ' +str(voters)+'\n'
+    '----------------' '\n'
+    'Khan: '+str(khanp)+' ('+str(khanv)+')\n'
+    'Correy: '+str(correyp)+' ('+str(correyv)+')\n'
+    'Li: {'+str(lip)+' ('+str(liv)+')\n'
+    "O'Tooley "+str(otooleyp)+' ('+str(otooleyv)+')\n'
+    '----------------' '\n'
+    'Winner: '+str(winner) +'\n'
+    '----------------' '\n'
+)
+
+#Export file
+#Set Path for Output and name .txt flile
+txtpath = os.path.join('Analysis','Poll.txt')
+
+#Write txt file
+txtfile= open(txtpath, 'w')
+txtfile.write(poll)
